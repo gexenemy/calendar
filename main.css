@@ -1,0 +1,84 @@
+* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    padding: 0;
+    margin: 0;
+}
+
+#content {
+    height: 100vh;
+}
+
+#carousel {
+    width: 100%;
+    height: 100%;
+
+}
+
+html,
+body {
+    position: relative;
+    height: 100%;
+}
+
+body {
+    background: #eee;
+    font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    color: #000;
+    margin: 0;
+    padding: 0;
+}
+
+.swiper-container {
+    width: 100%;
+    height: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    background: #fff;
+    /* Center slide text vertically */
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+
+}
+
+.buttons {
+    position: absolute;
+    bottom: 0;
+    z-index: 30;
+    color: #ffffff;
+}
+
+.buttons div {
+    font-size: 30px;
+}
+
+.swiper-slide-active {
+    /* background-position: -100px -100px; */
+    background-repeat: no-repeat;
+    background-size: calc(100% + 100px) auto; 
+    transition: background-position .3s ease-out !important;
+}
