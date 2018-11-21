@@ -78,6 +78,11 @@ body {
     width: 10px;
     height: 10px;
   }
+
+  .logo__icon {
+	width: 145px;
+	height: 60px;
+}
   
   #y-axis {
     left: 0;
