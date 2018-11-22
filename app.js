@@ -2,188 +2,91 @@
 
 $(document).ready(function () {
 
-	var $layer_0 = $('.layer-0'),
-		$layer_1 = $('.layer-1'),
-		$layer_2 = $('.layer-2'),
-		$x_axis = $('#x-axis'),
-		$y_axis = $('#y-axis'),
-		$container = $('body'),
-		container_w = $container.width(),
-		container_h = $container.height();
+	setInterval(border, 2000)
 
-	$(window).on('mousemove.parallax', function (event) {
-		var pos_x = event.pageX,
-			pos_y = event.pageY,
-			left = 0,
-			top = 0;
+	function border() {
+		$('.border').css('animation', 'none');
+		setTimeout(function() {
+			$('.border').css('animation', '');
+		}, 10)
+	}
 
-		left = container_w / 2 - pos_x;
-		top = container_h / 2 - pos_y;
-
-		// $(window).resize(function() {
-		// 	left = container_w / 2 - pos_x;
-		// 	top = container_h / 2 - pos_y;
-		// });
-
-		TweenMax.to(
-			$x_axis,
-			1, {
-				css: {
-					transform: 'translateX(' + (left * -1) + 'px)'
-				},
-				ease: Expo.easeOut,
-				overwrite: 'all'
-			});
-
-		TweenMax.to(
-			$y_axis,
-			1, {
-				css: {
-					transform: 'translateY(' + (top * -1) + 'px)'
-				},
-				ease: Expo.easeOut,
-				overwrite: 'all'
-			});
-
-		TweenMax.to(
-			$layer_2,
-			1, {
-				css: {
-					transform: 'translateX(' + left / 12 + 'px) translateY(' + top / 6 + 'px)'
-				},
-				ease: Expo.easeOut,
-				overwrite: 'all'
-			});
-
-		TweenMax.to(
-			$layer_1,
-			1, {
-				css: {
-					transform: 'translateX(' + left / 4 + 'px) translateY(' + top / 2 + 'px)'
-				},
-				ease: Expo.easeOut,
-				overwrite: 'all'
-			});
-
-		TweenMax.to(
-			$layer_0,
-			10, {
-				css: {
-					transform: 'rotate(' + left / 200 + 'deg)'
-				},
-				ease: Expo.easeOut,
-				overwrite: 'none'
-			}
-		)
+	TweenMax.set('.hexa-progress,.hexa-progress-bg', {
+		xPercent: "-50%",
+		yPercent: "-50%",
+		left: "50%",
+		top: "50%",
+		opacity: 1
 	});
 
-	$(window).resize(function() {
-		var container_w = $container.width(),
-		container_h = $container.height();
+	TweenMax.set('.percent', {
+		xPercent: "-50%",
+		yPercent: "-50%",
+		left: "50%",
+		top: "50%",
+		marginTop: 5,
+		opacity: 1
+	});
 
-		$(window).on('mousemove.parallax', function (event) {
-			var pos_x = event.pageX,
-				pos_y = event.pageY,
-				left = 0,
-				top = 0;
-	
-			left = container_w / 2 - pos_x;
-			top = container_h / 2 - pos_y;
-	
-			// $(window).resize(function() {
-			// 	left = container_w / 2 - pos_x;
-			// 	top = container_h / 2 - pos_y;
-			// });
-	
-			TweenMax.to(
-				$x_axis,
-				1, {
-					css: {
-						transform: 'translateX(' + (left * -1) + 'px)'
-					},
-					ease: Expo.easeOut,
-					overwrite: 'all'
-				});
-	
-			TweenMax.to(
-				$y_axis,
-				1, {
-					css: {
-						transform: 'translateY(' + (top * -1) + 'px)'
-					},
-					ease: Expo.easeOut,
-					overwrite: 'all'
-				});
-	
-			TweenMax.to(
-				$layer_2,
-				1, {
-					css: {
-						transform: 'translateX(' + left / 12 + 'px) translateY(' + top / 6 + 'px)'
-					},
-					ease: Expo.easeOut,
-					overwrite: 'all'
-				});
-	
-			TweenMax.to(
-				$layer_1,
-				1, {
-					css: {
-						transform: 'translateX(' + left / 4 + 'px) translateY(' + top / 2 + 'px)'
-					},
-					ease: Expo.easeOut,
-					overwrite: 'all'
-				});
-	
-			TweenMax.to(
-				$layer_0,
-				10, {
-					css: {
-						transform: 'rotate(' + left / 200 + 'deg)'
-					},
-					ease: Expo.easeOut,
-					overwrite: 'none'
+	function drawProgress() {
+		$.each($('.pctbox'), function (index, value) {
+			var endPercent = $(this).data("percent");
+			var hex = $(this).find('.hexa-progress path');
+			var chiffre = $(this).find('.pctamount');
+			var percent = {
+				curvalue: 0
+			};
+
+			TweenMax.fromTo(percent, 2.5, {
+				opacity: 0
+			}, {
+				opacity: 1,
+				delay: 0.5,
+				curvalue: endPercent,
+				roundProps: "curvalue",
+				ease: Power4.easeOut,
+				onUpdate: function () {
+					chiffre.text(percent.curvalue);
 				}
-			)
+			});
+			TweenMax.fromTo(hex, 2.5, {
+				drawSVG: false
+			}, {
+				delay: 0.5,
+				ease: Power4.easeOut,
+				drawSVG: "0% " + endPercent + "%"
+			});
+		});
+	}
+	drawProgress();
+
+	$('#randomize').mouseup(function () {
+		TweenMax.to('.hexa-progress path', 0.4, {
+			drawSVG: false,
+			onComplete: function () {
+				$.each($('.pctbox'), function () {
+					$(this).data('percent', Math.random() * 100);
+				});
+				drawProgress();
+			}
+		});
+		TweenMax.to('#randomize', 0.4, {
+			scale: 1,
+			transformOrigin: "50% 50%"
+		});
+	}).mousedown(function () {
+		TweenMax.to('#randomize', 0.4, {
+			scale: 0.95,
+			transformOrigin: "50% 50%"
 		});
 	});
 
-	// var swiper = new Swiper('.swiper-container', {
-	// 	direction: 'vertical',
-	// 	slidesPerView: 1,
-	// 	spaceBetween: 0,
-	// 	mousewheel: true,
-	// 	effect: 'fade',
-	// 	speed: 1000,
-	// 	pagination: {
-	// 		el: '.swiper-pagination',
-	// 		clickable: true,
-	// 		renderBullet: function (index, className) {
-	// 			return '<span class="owl">' + (index + 1) + '</span>';
-	// 		},
-	// 	},
-	// 	navigation: {
-	// 		nextEl: '.button-next',
-	// 		prevEl: '.button-prev',
-	// 	},
-	// });
-
-
-	// // $("body").mousemove(function(e) {
-	// // 	let moveX = e.pageX * -1 / 25 + 'px';
-	// // 	let moveY = e.pageY * -1 / 25 + 'px';
-	// // 	$('.swiper-slide-active').css('background-position', 'calc(50% + '+ moveX + ') calc(50% + ' + moveY + ')');
-	// // });
-	// var startX = -100,
-	// 	startY = -100,
-	// 	w = document.documentElement.offsetWidth,
-	// 	h = document.documentElement.offsetHeight;
-
-	// $('.swiper-slide-active').on('mousemove', function (evt) {
-	// 	var posX = Math.round(evt.clientX / w * startX)
-	// 	var posY = Math.round(evt.clientY / h * startY)
-	// 	$(this).css('background-position', posX + 'px ' + posY + 'px');
-	// })
+	TweenMax.to('#twitterlink,#randomize', 1, {
+		scale: 1.2,
+		repeat: -1,
+		transformOrigin: "50% 50%",
+		yoyo: true
+	});
 
 });
 
