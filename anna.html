@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8" />
+    <!-- <base href="/"> -->
+
+    <title>main</title>
+    <!-- <meta name="description" content="" /> -->
+
+    <!-- <meta http-equiv="X-UA-Compatible" content="IE=edge" /> -->
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, maximum-scale=1"
+    />
+
+    <!-- <meta property="og:image" content="path/to/image.jpg" /> -->
+    <link rel="icon" href="img/favicon/favicon.ico" />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="img/favicon/apple-touch-icon-180x180.png"
+    />
+
+    <!-- <meta name="theme-color" content="#000" /> -->
+
+    <link rel="stylesheet" href="css/main.min.css" />
+  </head>
+
+  <body>
+    <div class="page" id="page">
+      <header class="header">
+        <div class="header__lang">
+          <a href="#" class="header__lang-link header__lang-link_lang_ru header__lang-link_active">RU</a>
+          <a href="#" class="header__lang-link header__lang-link_lang_en">EN</a>
+        </div>  
+        <div class="header__logo"></div>
+        <button class="header__burger">
+          <svg class="header__burger-icon">
+              <use xlink:href="#burger"></use>
+          </svg>
+        </button>
+      </header>
+
+      <div class="photographer" id="photographer">
+        <div class="photographer-main">
+          <div class="photographer-main__description" id="photographer-parallax">
+            <div class="photographer-main__description-title">О проекте</div>
+            <div class="photographer-main__description-photographer">Фотограф: Анна Шакина</div>
+          </div>
+        </div>
+        <div class="photographer-footer">
+
+            <div class="footer__scroll photographer-footer-scroll">
+                <div class="footer__scroll-left">
+                  <svg class="footer__scroll-icon">
+                    <use xlink:href="#scroll"></use>
+                  </svg>
+                </div>
+                <span class="footer__scroll-action">Крути вниз</span>
+              </div>
+
+            <div class="footer__links photographer-footer-links">
+              <div class="footer__links-item footer__share">
+                <div class="footer__share-share">
+                  <svg class="footer__share-icon">
+                    <use xlink:href="#share"></use>
+                  </svg>
+                </div>
+                
+                <div class="footer__share-links">
+                  <a class="footer__share-link footer__share-link-vk" href="#">
+                    <svg class="footer__share-link-icon">
+                      <use xlink:href="#vk"></use>
+                    </svg>
+                  </a>
+                  <a class="footer__share-link footer__share-link-tw" href="#">
+                    <svg class="footer__share-link-icon">
+                      <use xlink:href="#tw"></use>
+                    </svg>
+                  </a>
+                  <a class="footer__share-link footer__share-link-ok" href="#">
+                    <svg class="footer__share-link-icon">
+                      <use xlink:href="#ok"></use>
+                    </svg>
+                  </a>
+                  <a class="footer__share-link footer__share-link-fb" href="#">
+                    <svg class="footer__share-link-icon">
+                      <use xlink:href="#fb"></use>
+                    </svg>
+                  </a>
+                </div>
+              </div>
+              <button class="footer__links-item footer__volume">
+                <svg class="footer__volume-icon">
+                  <use xlink:href="#volume"></use>
+                </svg>
+              </button>
+            </div>
+            
+        </div>
+      </div>
+
+      <div class="about">
+
+        <div class="about__header about-section" id="about-header">
+          <div class="about__header-description" id="about-header-parallax">
+              <div class="about__header-description-title">Двадцать <br> второй</div>
+              <div class="about__header-description-subtitle">календарь ЦФТ не похож ни на один предыдущий</div>
+          </div>
+          <div class="about__header-img">
+              <picture>
+                <!--[if IE 9]><video style="display: none;"><![endif]-->
+                <source srcset="img/photographer/photo-1-l.jpg" media="(min-width: 2560px)">
+                <source srcset="img/photographer/photo-1-m.jpg" media="(min-width: 1440px)">
+                <!--[if IE 9]></video><![endif]-->
+                <img srcset="img/photographer/photo-1-m.jpg" alt="">
+              </picture>
+          </div>
+        </div>
+
+        <div class="about__photographer about-section" id="about-photographer">
+          <div class="about__photographer-img-left" id="about-photographer-left">
+              <picture>
+                <!--[if IE 9]><video style="display: none;"><![endif]-->
+                <source srcset="img/photographer/photo-2-l.jpg" media="(min-width: 2560px)">
+                <source srcset="img/photographer/photo-2-m.jpg" media="(min-width: 1440px)">
+                <!--[if IE 9]></video><![endif]-->
+                <img srcset="img/photographer/photo-2-m.jpg" alt="">
+              </picture>
+          </div>
+          <div class="about__photographer-text about__photographer-calendar" id="about-photographer-calendar">Теоретически так можно сказать про любой Календарь ЦФТ, но этот совершенно точно особенный. Существует мнение, что мужчины и женщины смотрят на мир по-разному. Двадцать второй Календарь ЦФТ дает возможность проверить это, ведь впервые в истории проекта его снимала женщина. </div>
+          <div class="about__photographer-name" id="about-photographer-name">Анна Шакина</div>
+          <div class="about__photographer-text about__photographer-about" id="about-photographer-about">Анна Шакина – профессиональный фотограф. Живет и работает в Москве. Снимает «счастье» и «одиночество», «надежду» и «мечту». Много учится и учит сама. Она молода, талантлива, амбициозна и очень требовательна к себе. Анна  с  радостью взялась за арт-проект для ЦФТ, потому что  «любит необычные истории».</div>
+          <div class="about__photographer-img-right" id="about-photographer-right">
+              <picture>
+                <!--[if IE 9]><video style="display: none;"><![endif]-->
+                <source srcset="img/photographer/photo-3-l.jpg" media="(min-width: 2560px)">
+                <source srcset="img/photographer/photo-3-m.jpg" media="(min-width: 1440px)">
+                <!--[if IE 9]></video><![endif]-->
+                <img srcset="img/photographer/photo-3-m.jpg" alt="">
+              </picture>
+          </div>
+        </div>
+
+
+        <div class="about__middle-description about-section" id="about-middle">
+          <div class="about__middle-img" id="about-middle-img">
+              <picture>
+                <!--[if IE 9]><video style="display: none;"><![endif]-->
+                <source srcset="img/photographer/photo-4-l.jpg" media="(min-width: 2560px)">
+                <source srcset="img/photographer/photo-4-m.jpg" media="(min-width: 1440px)">
+                <!--[if IE 9]></video><![endif]-->
+                <img srcset="img/photographer/photo-4-m.jpg" alt="">
+              </picture>
+          </div>
+          <div class="about__middle-text" id="about-middle-text">
+              А история и правда была не совсем обычная, ведь мы решили замахнуться на  Календарь с дополненной реальностью и перед фотографом стояла задача не только сделать концептуальные фотографии, но и «оживить» картинку в моменте.
+              <br>
+              <br>
+              Анне удалось языком классической черно-белой фотографии создать двеннадцать  интригующих историй, которые помимо фото существуют еще и в коротких видеозарисовках. 
+          </div>
+
+        </div>
+
+        <div class="about__cft-show cft-show about-section" id="cft-show">
+          <div class="cft-show__description" id="cft-show__description">
+              <div class="cft-show__description-title">Скачайте приложение <br> «ЦФТ ШОУ», наведите экран <br> телефона на фотоизображение</div>
+              <div class="cft-show__description-links">
+                <a href="#" class="cft-show__description-link cft-show__description-link_type_google"></a>
+                <a href="#" class="cft-show__description-link cft-show__description-link_type_apple"></a>
+              </div>
+          </div>
+
+          <div class="cft-show__img" id="cft-show__img">
+              <picture>
+                <!--[if IE 9]><video style="display: none;"><![endif]-->
+                <source srcset="img/photographer/app-l.png" media="(min-width: 2560px)">
+                <source srcset="img/photographer/app-m.png" media="(min-width: 1440px)">
+                <!--[if IE 9]></video><![endif]-->
+                <img srcset="img/photographer/app-m.png" alt="">
+              </picture>
+          </div>
+
+        </div>
+
+        <div class="about__end-section end about-section" id="end">
+          <div class="end__img" id="end__img">
+            <picture>
+              <!--[if IE 9]><video style="display: none;"><![endif]-->
+              <source srcset="img/photographer/end-l.jpg" media="(min-width: 2560px)">
+              <!--[if IE 9]></video><![endif]-->
+              <img srcset="img/photographer/end-l.jpg" alt="">
+            </picture>
+          </div>
+          <div class="end__title" id="end__title">The show must go on</div>
+        </div>
+
+        <div class="about__thanks thanks">
+          <div class="thanks__title">Выражаем признательность за поддержку проекта ювелирным и бельевым брендам:</div>
+          <ul class="thanks__list">
+            <li>My Dear Petra – mydearpetra.ru</li>
+            <li>Saint – saintroom.com</li>
+            <li>Fangahra – fangahra.com</li>
+            <li>Yana Jewellery – Yana.fr</li>
+          </ul>
+        </div>
+        
+        
+      </div>
+
+
+      
+    </div>
+
+    <div class="all-months">
+        <button class="all-months__close">
+          <svg class="all-months__close-icon">
+            <use xlink:href="#close"></use>
+          </svg>
+        </button>
+        <div class="all-months__section">
+            <div class="all-months__list">
+              <div class="all-months__item">
+                <div class="all-months__item-block">
+                  <div class="all-months__item-img" style="background-image: url(img/january.jpg)"></div>
+                  <div class="all-months__item-month">Январь</div>
+                  <video class="all-months__item-video" muted loop>
+                      <source src="video/january-preview.mp4" type="video/mp4">
+                  </video>
+                </div>
+              </div>
+
+              <div class="all-months__item">
+                  <div class="all-months__item-block">
+                    <div class="all-months__item-img" style="background-image: url(img/february.jpg)"></div>
+                    <div class="all-months__item-month">Февраль</div>
+                    <video class="all-months__item-video" muted loop>
+                        <source src="video/february-preview.mp4" type="video/mp4">
+                    </video>
+                  </div>
+                </div>
+              <div class="all-months__item">
+                  <div class="all-months__item-block">
+                    <div class="all-months__item-img" style="background-image: url(img/march.jpg)"></div>
+                    <div class="all-months__item-month">Март</div>
+                    <video class="all-months__item-video" muted loop>
+                        <source src="video/march-preview.mp4" type="video/mp4">
+                    </video>
+                  </div>
+                </div>
+              <div class="all-months__item">
+                  <div class="all-months__item-block">
+                    <div class="all-months__item-img" style="background-image: url(img/april.jpg)"></div>
+                    <div class="all-months__item-month">Апрель</div>
+                    <video class="all-months__item-video" muted loop>
+                        <source src="video/april-preview.mp4" type="video/mp4">
+                    </video>
+                  </div>
+                </div>
+              <div class="all-months__item">
+                  <div class="all-months__item-block">
+                    <div class="all-months__item-img" style="background-image: url(img/may.jpg)"></div>
+                    <div class="all-months__item-month">Май</div>
+                    <video class="all-months__item-video" muted loop>
+                        <source src="video/may-preview.mp4" type="video/mp4">
+                    </video>
+                  </div>
+                </div>
+              <div class="all-months__item">
+                  <div class="all-months__item-block">
+                    <div class="all-months__item-img" style="background-image: url(img/june.jpg)"></div>
+                    <div class="all-months__item-month">Июнь</div>
+                    <video class="all-months__item-video" muted loop>
+                        <source src="video/june-preview.mp4" type="video/mp4">
+                    </video>
+                  </div>
+                </div>
+              <div class="all-months__item">
+                  <div class="all-months__item-block">
+                    <div class="all-months__item-img" style="background-image: url(img/july.jpg)"></div>
+                    <div class="all-months__item-month">Июль</div>
+                    <video class="all-months__item-video" muted loop>
+                        <source src="video/july-preview.mp4" type="video/mp4">
+                    </video>
+                  </div>
+                </div>
+              <div class="all-months__item">
+                  <div class="all-months__item-block">
+                    <div class="all-months__item-img" style="background-image: url(img/august.jpg)"></div>
+                    <div class="all-months__item-month">Август</div>
+                    <video class="all-months__item-video" muted loop>
+                        <source src="video/august-preview.mp4" type="video/mp4">
+                    </video>
+                  </div>
+                </div>
+              <div class="all-months__item">
+                  <div class="all-months__item-block">
+                    <div class="all-months__item-img" style="background-image: url(img/september.jpg)"></div>
+                    <div class="all-months__item-month">Сентябрь</div>
+                    <video class="all-months__item-video" muted loop>
+                        <source src="video/september-preview.mp4" type="video/mp4">
+                    </video>
+                  </div>
+                </div>
+              <div class="all-months__item">
+                  <div class="all-months__item-block">
+                    <div class="all-months__item-img" style="background-image: url(img/october.jpg)"></div>
+                    <div class="all-months__item-month">Октябрь</div>
+                    <video class="all-months__item-video" muted loop>
+                        <source src="video/october-preview.mp4" type="video/mp4">
+                    </video>
+                  </div>
+                </div>
+              <div class="all-months__item">
+                  <div class="all-months__item-block">
+                    <div class="all-months__item-img" style="background-image: url(img/november.jpg)"></div>
+                    <div class="all-months__item-month">Ноябрь</div>
+                    <video class="all-months__item-video" muted loop>
+                        <source src="video/november-preview.mp4" type="video/mp4">
+                    </video>
+                  </div>
+                </div>
+
+              <div class="all-months__item">
+                  <div class="all-months__item-block">
+                    <div class="all-months__item-img" style="background-image: url(img/december.jpg)"></div>
+                    <div class="all-months__item-month">Декабрь</div>
+                    <video class="all-months__item-video" muted loop>
+                        <source src="video/december-preview.mp4" type="video/mp4">
+                    </video>
+                  </div>
+                </div>
+            </div>
+        </div>
+        <div class="overlay"></div>
+    </div>
+
+    <div class="menu">
+      <div class="menu__section">
+        <ul class="menu__list">
+          <li class="menu__list-item"><a class="menu__list-link" href="#">Главная страница</a></li>
+          <li class="menu__list-item"><a class="menu__list-link" href="#">О проекте</a></li>
+          <li class="menu__list-item"><a class="menu__list-link" href="#">Контакты</a></li>
+        </ul>
+        <div class="menu__mobile">
+          <div class="menu__mobile-img"></div>
+          <div class="menu__mobile-links">
+            <a href="#" class="menu__mobile-link menu__mobile-link_type_google"></a>
+            <a href="#" class="menu__mobile-link menu__mobile-link_type_apple"></a>
+          </div>
+        </div>
+      </div>
+      <div class="menu__footer">Центр Финансовых Технологий © 2018</div>
+      <div class="overlay overlay-noise"></div>
+    </div>
+
+    <div class="cursor"></div>
+
+    <svg xmlns="http://www.w3.org/2000/svg" width="0" height="0" display="none">
+
+      <symbol id="burger" viewBox="0 0 40 40">
+        <path fill-rule="evenodd" d="M5 13h30v2H5v-2zm0 6h30v2H5v-2zm0 6h22v2H5v-2z"/>
+      </symbol>
+
+      <symbol id="play" viewBox="0 0 40 40">
+        <g fill="none" fill-rule="nonzero">
+          <path stroke="#FFF" stroke-width="2" d="M31 21l-13 9V12z"/>
+          <path fill="#FFF" d="M12 10h2v22h-2z"/>
+        </g>
+      </symbol>
+
+      <symbol id="up" viewBox="0 0 40 40">
+        <path fill="none" fill-rule="nonzero" stroke-width="2" d="M10 24l10-8 10 8"/>
+      </symbol>
+
+      <symbol id="download" viewBox="0 0 40 40">
+        <g fill="none" fill-rule="nonzero">
+          <path fill="#FFF" d="M7 31h26v2H7z"/>
+          <path stroke="#FFF" stroke-width="2" d="M13 20l7 6 7-6M20 26.307V9"/>
+        </g>
+      </symbol>
+      
+      <symbol id="scroll" viewBox="0 0 40 40">
+        <g fill="none" fill-rule="nonzero">
+          <path stroke="#FFF" stroke-width="2" d="M20 9a6 6 0 0 0-6 6v10a6 6 0 1 0 12 0V15a6 6 0 0 0-6-6z"/>
+          <circle cx="20" cy="15" r="2" fill="#FFF"/>
+          <rect width="4" height="4" x="18" y="13" fill="#FFF" rx="2"/>
+        </g>
+      </symbol>
+
+      <symbol id="share" viewBox="0 0 40 40">
+          <path fill-rule="evenodd" d="M21.273 21.456A3.99 3.99 0 0 1 21 20c0-.493.09-.966.253-1.402l-3.654-2.558a4 4 0 1 1 1.148-1.638l3.654 2.558a4 4 0 1 1 .044 6.118l-3.678 2.574a4 4 0 1 1-1.124-1.654l3.63-2.542zM25 22a2 2 0 1 0 0-4 2 2 0 0 0 0 4zm-10-7a2 2 0 1 0 0-4 2 2 0 0 0 0 4zm0 14a2 2 0 1 0 0-4 2 2 0 0 0 0 4z"/>
+      </symbol>
+
+      <symbol id="vk" viewBox="0 0 40 40">
+          <path fill-rule="evenodd" d="M21.177 26.384s.433-.047.655-.281c.203-.215.196-.62.196-.62s-.027-1.888.866-2.166c.88-.275 2.011 1.826 3.21 2.634.907.61 1.595.477 1.595.477l3.206-.044s1.676-.102.881-1.396c-.066-.106-.463-.957-2.383-2.706-2.01-1.831-1.74-1.535.68-4.702 1.474-1.93 2.064-3.107 1.88-3.61-.176-.482-1.26-.354-1.26-.354l-3.609.022s-.267-.036-.466.08c-.193.114-.319.38-.319.38s-.57 1.493-1.332 2.763c-1.607 2.677-2.25 2.82-2.512 2.653-.612-.388-.46-1.558-.46-2.388 0-2.596.402-3.678-.78-3.958-.392-.094-.68-.155-1.684-.165-1.288-.013-2.377.004-2.995.3-.41.198-.728.638-.534.663.238.031.778.143 1.065.526.37.494.357 1.602.357 1.602s.212 3.056-.497 3.435c-.486.26-1.153-.27-2.586-2.7a22.409 22.409 0 0 1-1.288-2.62s-.106-.258-.298-.396c-.231-.167-.554-.219-.554-.219l-3.429.022s-.515.014-.704.234c-.168.195-.013.599-.013.599s2.685 6.166 5.725 9.273c2.788 2.848 5.953 2.662 5.953 2.662h1.434z"/>
+      </symbol>
+
+      <symbol id="tw" viewBox="0 0 40 40">
+          <path fill-rule="evenodd" d="M19.401 16.256l.042.692-.7-.084c-2.546-.325-4.77-1.427-6.659-3.277l-.923-.918-.238.678c-.503 1.511-.182 3.107.868 4.18.56.594.433.678-.532.325-.336-.113-.63-.198-.657-.155-.098.099.237 1.384.503 1.892.364.707 1.105 1.399 1.917 1.808l.685.325-.811.014c-.784 0-.812.014-.728.31.28.919 1.385 1.893 2.616 2.317l.868.297-.756.452a7.876 7.876 0 0 1-3.749 1.045c-.63.014-1.147.07-1.147.113 0 .141 1.707.932 2.7 1.243 2.98.918 6.52.522 9.177-1.046 1.889-1.115 3.777-3.333 4.659-5.48.475-1.143.951-3.234.951-4.236 0-.65.042-.735.825-1.512.462-.452.896-.946.98-1.087.14-.268.126-.268-.588-.028-1.189.423-1.357.367-.77-.269.434-.452.952-1.27.952-1.51 0-.043-.21.027-.448.154-.252.142-.811.354-1.23.48l-.756.24-.686-.465c-.377-.255-.91-.537-1.189-.622-.713-.198-1.805-.17-2.448.057-1.749.635-2.854 2.274-2.728 4.067z"/>
+      </symbol>
+
+      <symbol id="ok" viewBox="0 0 40 40">
+          <path fill-rule="evenodd" d="M19.986 20.321c-2.948 0-5.346-2.314-5.346-5.16S17.038 10 19.986 10c2.95 0 5.347 2.315 5.347 5.161 0 2.846-2.397 5.16-5.347 5.16zm0-7.296c-1.22 0-2.213.958-2.213 2.136 0 1.178.994 2.137 2.213 2.137 1.221 0 2.214-.96 2.214-2.137 0-1.178-.993-2.136-2.214-2.136zm2.177 11.509l2.99 2.885c.611.59.611 1.548 0 2.138-.612.59-1.604.59-2.215 0L20 26.722l-2.936 2.835a1.594 1.594 0 0 1-1.108.443c-.4 0-.801-.148-1.107-.443a1.476 1.476 0 0 1-.001-2.138l2.99-2.885a10.235 10.235 0 0 1-3.105-1.241 1.482 1.482 0 0 1-.49-2.086c.459-.707 1.426-.92 2.159-.475a6.996 6.996 0 0 0 7.198 0c.733-.445 1.7-.232 2.16.475.461.707.24 1.64-.491 2.086a10.219 10.219 0 0 1-3.105 1.24z"/>
+      </symbol>
+
+      <symbol id="fb" viewBox="0 0 40 40">
+          <path fill-rule="evenodd" d="M21.138 29.781V19.89h2.73l.362-3.41h-3.092l.004-1.705c0-.89.085-1.366 1.362-1.366h1.707V10H21.48c-3.28 0-4.435 1.654-4.435 4.435v2.046H15v3.409h2.045v9.891h4.093z"/>
+      </symbol>
+
+      <symbol id="volume" viewBox="0 0 40 40">
+        <g fill="none" fill-rule="nonzero">
+          <path stroke="#FFF" stroke-width="2" d="M26 10.766L17.277 16h-4.713c-.662 0-.864.039-1.07.149a.818.818 0 0 0-.345.346c-.11.206-.149.407-.149 1.069v4.872c0 .662.039.864.149 1.07a.818.818 0 0 0 .346.345c.205.11.407.15 1.069.15h4.713L26 29.233V10.766z"/>
+          <rect width="2" height="8" x="16" y="15.766" fill="#FFF" rx="1"/>
+          <path stroke="#FFF" stroke-width="2" d="M29 22.766a3 3 0 1 0 0-6" opacity=".5"/>
+          <path stroke="#FFF" stroke-width="2" d="M29 26.766a7 7 0 1 0 0-14" opacity=".2"/>
+        </g>
+      </symbol>
+
+      <symbol id="months" viewBox="0 0 40 40">
+        <g fill-rule="nonzero">
+          <path d="M11 19h2v2h-2zM19 19h2v2h-2zM27 19h2v2h-2zM11 11h2v2h-2zM19 11h2v2h-2zM27 11h2v2h-2zM11 27h2v2h-2zM19 27h2v2h-2zM27 27h2v2h-2z"/>
+        </g>
+      </symbol>
+
+      <symbol id="close" viewBox="0 0 40 40">
+        <g fill="#FFF" fill-rule="nonzero">
+            <path d="M8.686 29.9L29.9 8.685l1.415 1.415L10.1 31.314z"/>
+            <path d="M10.1 8.686L31.315 29.9l-1.415 1.415L8.686 10.1z"/>
+        </g>
+      </symbol>
+
+    </svg>
+
+    <script src="js/scripts.min.js"></script>
+  </body>
+</html>
