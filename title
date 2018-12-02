@@ -1,0 +1,55 @@
+
+  swiper.on("slideChangeTransitionStart", function () {
+    mainAnimation();
+    isAddedVideo = false;
+    changeTitle(this.realIndex)
+  });
+
+  function changeTitle(index) {
+    var months = [
+      "Январь",
+      "Февраль",
+      "Март",
+      "Апрель",
+      "Май",
+      "Июнь",
+      "Июль",
+      "Август",
+      "Сентябрь",
+      "Октябрь",
+      "Ноябрь",
+      "Декабрь"
+    ];
+    var month = $('#loadStatus');
+    var lineHeight = month.height();
+    var tl = new TimelineMax();
+
+    tl.to(month, 0.8, {
+      y: '-' + lineHeight + 'px',
+      ease: Expo.easeOut,
+      onComplete: function() {
+        month.text(months[index]);
+      }
+    }).set(month, {
+      y: '' + lineHeight + 'px',
+    }).to(month, 0.8, {
+      y: 0,
+      ease: Expo.easeOut,
+    });
+  }
+  &__section {
+    max-width: 1080px;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    display: none;
+    transition: opacity 0.6s;
+    opacity: 0;
+    z-index: 5;
+    padding: 10px 0;
+  }
+  
