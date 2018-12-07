@@ -1,0 +1,70 @@
+
+  function mainAnimation() {
+
+    var cursor = $(".cursor");
+
+    $(document).on("mousemove", function (event) {
+      var pos_x = event.clientX,
+        pos_y = event.clientY;
+
+      TweenMax.to(cursor, 1, {
+        x: pos_x,
+        y: pos_y,
+        ease: Expo.easeOut
+      });
+    });
+  }
+
+  mainAnimation();
+
+  class Visiblee {
+
+    constructor(block) {
+      this.block = block;
+    }
+
+    getWindowPosition() {
+      var windowPosition = {
+        top: window.pageYOffset,
+        bottom: window.pageYOffset + document.documentElement.clientHeight
+      };
+      return windowPosition;
+    }
+
+    getTargetPosition() {
+      var targetPosition = {
+        top: window.pageYOffset + this.block.getBoundingClientRect().top,
+        bottom: window.pageYOffset + this.block.getBoundingClientRect().bottom
+      }
+      return targetPosition;
+    }
+    
+    isTop() {
+      if (this.getTargetPosition().bottom > this.getWindowPosition().bottom &&
+      this.getTargetPosition().top < this.getWindowPosition().bottom) {
+        var progress = ((this.getWindowPosition().bottom - this.getTargetPosition().top) / (this.getTargetPosition().bottom - this.getTargetPosition().top)).toFixed(2);
+        return progress;
+      }
+    }
+
+    isBottom() {
+      if (this.getTargetPosition().top <= this.getWindowPosition().top &&
+      this.getTargetPosition().bottom >= this.getWindowPosition().top) {
+        return true;
+      }
+    }
+  }
+
+  var v = new Visiblee(element1)
+
+  window.addEventListener("scroll", function () {
+    // if (v.isTop()) {
+    //   console.log('isTop');
+
+    // } else if (v.isBottom()) {
+    //   console.log('isBottom');
+    // }
+
+    console.log(v.isTop())
+
+  });
