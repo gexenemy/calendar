@@ -1,0 +1,152 @@
+ function preloader(state) {
+    var tl = new TimelineMax({ paused: true, repeat: -1 }),
+      top = $(".preloader__block-border_top"),
+      right = $(".preloader__block-border_right"),
+      bottom = $(".preloader__block-border_bottom"),
+      left = $(".preloader__block-border_left"),
+      overlay = $(".preloader");
+
+    if (state) {
+      tl.kill();
+
+      TweenMax.to(overlay, 0.5, {
+        display: "block",
+        autoAlpha: 1
+      });
+
+      // tl.set(top, {
+      //   left: '0',
+      //   width: 0
+      // }).set(right, {
+      //   top: "0",
+      //   height: 0
+      // }).set(bottom, {
+      //   right: "0",
+      //   width: 0
+      // }).set(left, {
+      //   bottom: "0",
+      //   height: 0
+      // })
+
+      tl.to(
+        top,
+        0.25,
+        {
+          width: "100%",
+          ease: Power0.easeNone
+        },
+        0.25
+      )
+        .to(right, 0.25, {
+          height: "100%",
+          ease: Power0.easeNone
+        })
+        .to(bottom, 0.25, {
+          width: "100%",
+          ease: Power0.easeNone
+        })
+        .to(left, 0.25, {
+          height: "100%",
+          ease: Power0.easeNone
+        })
+        .to(top, 0.25, {
+          left: "100%",
+          ease: Power0.easeNone,
+          width: 0
+        })
+        .to(right, 0.25, {
+          top: "100%",
+          ease: Power0.easeNone,
+          height: 0
+        })
+        .to(bottom, 0.25, {
+          right: "100%",
+          ease: Power0.easeNone,
+          width: 0
+        })
+        .to(left, 0.25, {
+          bottom: "100%",
+          ease: Power0.easeNone,
+          height: 0
+        });
+    } else if (!state) {
+      tl.kill();
+      TweenMax.to(overlay, 0.5, {
+        display: "none",
+        autoAlpha: 0
+      });
+    }
+  }
+  
+  
+  
+.preloader {
+  position: fixed;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  background: #111111;
+  z-index: 1;
+  opacity: 0;
+  display: none;
+  visibility: hidden;
+  &__block {
+    box-sizing: border-box;
+    border: 1px solid rgba(255,255,255,.3);
+    height: 200px;
+    width: 200px;
+    margin: auto;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    transform: rotate(45deg);
+    &-border {
+      background: #a58953;
+      position: absolute;
+      &_top {
+        top: -1px;
+        left: 0;
+        width: 0;
+        height: 1px;
+      }
+      &_right {
+        top: 0;
+        right: -1px;
+        width: 1px;
+        height: 0;
+      }
+      &_bottom {
+        bottom: -1px;
+        right: 0;
+        width: 0;
+        height: 1px;
+      }
+      &_left {
+        bottom: 0;
+        left: -1px;
+        width: 1px;
+        height: 0;
+      }
+    }
+  }
+}
+
+
+<div class="preloader overlay-noise">
+      <div class="preloader__block">
+        <div class="preloader__block-border preloader__block-border_top"></div>
+        <div
+          class="preloader__block-border preloader__block-border_right"
+        ></div>
+        <div
+          class="preloader__block-border preloader__block-border_bottom"
+        ></div>
+        <div class="preloader__block-border preloader__block-border_left"></div>
+      </div>
+    </div>
+  
+  
+  
