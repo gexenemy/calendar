@@ -1,0 +1,149 @@
+$phone-width: calc(100% - 32px);
+
+// new grid
+
+@media screen and (min-width: 1201px) {
+	@for $column from 1 through 12 { 
+		$indent: $column - 1;
+		.cell-desktop-#{$column} { 
+			width: 80px * $column + 16px * $indent;
+		}
+	}
+}
+
+@media screen and (min-width: 817px) and (max-width: 1200px) {
+	@for $column from 1 through 8 {
+		$indent: $column - 1;
+		.cell-tablet-#{$column} { 
+			width: 80px * $column + 16px * $indent;
+		}
+	}
+}
+
+@media screen and (min-width: 433px) and (max-width: 816px) {
+	@for $column from 1 through 4 {
+		$indent: $column - 1;
+		.cell-phone-#{$column} { 
+			width: 80px * $column + 16px * $indent;
+		}
+	}
+}
+
+@media screen and (max-width: 432px){
+	.cell-phone-1 {
+		width: 25%;
+	}
+
+	.cell-phone-2 {
+		width: 50%;
+	}
+
+	.cell-phone-3 {
+		width: 75%;
+	}
+
+	.cell-phone-4 {
+		width: 100%;
+	}
+}
+
+// end of new grid
+
+								 //Высчитывается ширина блока в зависимости от количество колонок, из которых он состоит.
+@for $column from 1 through 12 { //Ширина складывается из ширины колонки, умноженной на их количество + отступы между ними.
+	$indent: $column - 1;
+	.mdl-cell-#{$column} { 
+		width: 80px * $column + 16px * $indent;
+	}
+}
+
+
+@mixin grid-container($column) {//каждая колонка(включая границы) 80px + 8px на маргин с каждой стороны + grid с границами по 16px с обоих сторон
+		box-sizing: border-box;
+		width: 96px * $column + 32px;
+		margin-left: auto;
+		margin-right: auto;
+		padding: 0 8px;
+}
+
+@media screen and (min-width:1201px) {//desktop
+	
+	.grid-container {
+		@include grid-container(12);
+	}
+
+	.hidden-desktop {
+		display: none;
+	}		
+}
+
+@media screen and (min-width:1384px) {//bigScreen
+
+	.hidden-bigDesktop {
+		display: none;
+	}
+
+	.visible-bigDesktop {
+		display: inherit !important;
+	}
+}
+
+@media screen and (min-width:817px) and (max-width:1200px) {//tablet
+	.grid-container {
+		@include grid-container(8);
+	}
+
+	.hidden-tablet {
+		display: none;
+	}
+}
+
+@media screen and (max-width:816px) {//phone  (min-width:416px) and
+
+	.grid-container {
+		@include grid-container(4);
+	}
+
+	.hidden-phone {
+		display: none !important;
+	}
+}
+
+@media screen and (max-width:432px) { //минимальный размер
+
+	.grid-container {
+		box-sizing: border-box;
+		width: calc(100% - 16px);
+		margin: 0 8px;
+		//padding: 0 8px;
+	}
+
+	.mdl-grid {
+		width: 100% !important;
+		padding: 0 !important;
+		
+		.mdl-cell {
+			margin: 8px 0;
+			// width: auto !important; // где это нужно? из-за этой штуки не сжимается форма, потому что там лейблы мдльские выставляют ширину по тексту
+		}
+
+		.mdl-cell-4 {
+			width: 100% !important;
+		}
+	}
+
+	@for $col from 1 through 4 { //Ширина складывается из ширины колонки, умноженной на их количество + отступы между ними.
+		// $phone-width: calc(100% - 32px);
+		.mdl-cell-#{$col} { 
+			width: calc($phone-width * 0.25);
+		}
+	}
+}
+
+.mdl-cell {
+	box-sizing: border-box;
+}
+
+
+		
+
